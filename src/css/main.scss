@@ -7,3 +7,64 @@ main {
   width: 1440px;
   margin: auto;
 }
+
+button {
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.header {
+  display: grid;
+  align-items: center;
+
+  height: 42px;
+  padding-top: 5px;
+
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.75);
+
+  grid-template-columns: 40px auto 30px;
+  grid-template-rows: auto;
+
+  * {
+    margin: 0;
+
+    font-size: 1.25rem;
+  }
+}
+
+.site_title {
+  overflow: hidden;
+
+  width: 1px;
+  height: 1px;
+}
+
+.header-menu {
+  margin-left: 13px;
+
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.window_title {
+  margin-left: 31px;
+
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.header-addition_menu {
+  margin-right: 12px;
+
+  grid-column: 3;
+  grid-row: 1;
+}
