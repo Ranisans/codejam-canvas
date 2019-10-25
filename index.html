@@ -7,6 +7,52 @@
   <title>Codejam Canvas</title>
 </head>
 <body>
-  
+  <header class="header">
+    <h1 class="site_title">Codejam Canvas</h1>
+    <button class="header-menu">
+      <i class="menu-icon"></i>
+    </button>
+    <h2 class="window_title">CodeJam - Pallete</h2>
+    <button class="header-addition_menu">
+      <i class="menu-icon"></i>
+    </button>
+  </header>
+
+  <main>
+    <section class="working_panels">
+      <article class="tools working_panels-panel">
+        <button class="tools-item paint_bucket">
+          <span class="button-icon"></span>
+        </button>
+        <button class="tools-item choose_color">
+          <span class="button-icon"></span>
+        </button>
+        <div class="tools-line"></div>
+        <button class="tools-item move">
+          <span class="button-icon"></span>
+        </button>
+        <button class="tools-item transform">
+          <span class="button-icon"></span>
+        </button>
+      </article>
+      <article class="colors working_panels-panel">
+        <button class="colors-item current_color">
+          <span class="button-icon"></span>
+        </button>
+        <button class="colors-item prev_color">
+          <span class="button-icon"></span>
+        </button>
+        <div class="tools-line"></div>
+        <button class="colors-item red_color">
+          <span class="button-icon"></span>
+        </button>
+        <button class="colors-item blue_color">
+          <span class="button-icon"></span>
+        </button>
+      </article>
+    </section>
+
+    <canvas class="canvas" id="canvas"></canvas>
+  </main>
 </body>
 </html>
