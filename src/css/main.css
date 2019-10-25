@@ -70,4 +70,42 @@ button:focus {
   -ms-grid-row: 1;
   grid-row: 1;
 }
+
+main {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 260px auto;
+      grid-template-columns: 260px auto;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+.working_panels {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.working_panels-panel {
+  display: -ms-grid;
+  display: grid;
+  width: 228px;
+  height: 246px;
+  margin-left: 29px;
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.75);
+          box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.75);
+  -ms-grid-columns: 100%;
+      grid-template-columns: 100%;
+  -ms-grid-rows: 45px 45px 45px 45px 45px;
+      grid-template-rows: 45px 45px 45px 45px 45px;
+}
+
+.tools {
+  margin-top: 78px;
+}
+
+.colors {
+  margin-top: 92px;
+}
 /*# sourceMappingURL=main.css.map */
