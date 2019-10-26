@@ -53,3 +53,17 @@ const fillCanvas = (squareInRow, data) => {
     }
   }
 };
+
+document.querySelector(".element4x4").addEventListener("click", () => {
+  const squareInRow = 4;
+  fetchFile("4x4.json").then(data => {
+    fillCanvas(squareInRow, data);
+  });
+});
+
+document.querySelector(".element32x32").addEventListener("click", () => {
+  const squareInRow = 32;
+  fetchFile("32x32.json").then(data => {
+    fillCanvas(squareInRow, data);
+  });
+});
