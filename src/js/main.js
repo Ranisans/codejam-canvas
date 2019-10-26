@@ -38,10 +38,14 @@ const fetchFile = fileName => {
     });
 };
 
+const clearCanvas = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
+
 const fillCanvas = (squareInRow, data) => {
   const squareSize = calculateSquareSize(squareInRow);
 
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  clearCanvas();
 
   let colorHandler;
   if (typeof data[0][0] !== "string") colorHandler = rgbaToHex;
@@ -66,4 +70,13 @@ document.querySelector(".element32x32").addEventListener("click", () => {
   fetchFile("32x32.json").then(data => {
     fillCanvas(squareInRow, data);
   });
+});
+
+document.querySelector(".element256x256").addEventListener("click", () => {
+  clearCanvas();
+  const baseImage = new Image();
+  baseImage.src = "/src/data/image.png";
+  baseImage.onload = () => {
+    ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+  };
 });
