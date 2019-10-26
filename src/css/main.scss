@@ -73,6 +73,8 @@ button {
 
 // main
 main {
+  position: relative;
+
   display: grid;
 
   grid-template-columns: 260px auto;
@@ -226,6 +228,28 @@ main {
   span {
     background-color: #41b6f7;
   }
+}
+
+.change_data {
+  position: absolute;
+  top: 78px;
+  left: 300px;
+
+  display: block;
+
+  border: 1px solid gray;
+}
+
+.change_data-header {
+  text-align: center;
+}
+
+.change_data-button {
+  width: 100%;
+  height: 20px;
+  margin-top: 20px;
+
+  background-color: #41f795;
 }
 
 //canvas
