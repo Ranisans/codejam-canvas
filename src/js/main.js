@@ -43,6 +43,7 @@ const clearCanvas = () => {
 };
 
 const fillCanvas = (squareInRow, data) => {
+  if (data === "error") return;
   const squareSize = calculateSquareSize(squareInRow);
 
   clearCanvas();
@@ -80,3 +81,9 @@ document.querySelector(".element256x256").addEventListener("click", () => {
     ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
   };
 });
+
+window.onload = () => {
+  if (window.location.protocol == "file:") {
+    alert("Please start the HTML server! How to - see in readme.md.");
+  }
+};
