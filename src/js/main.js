@@ -3,6 +3,9 @@ const canvasSize = 512;
 const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
+const dataPath =
+  "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/";
+
 canvas.width = canvasSize;
 canvas.height = canvasSize;
 
@@ -24,7 +27,7 @@ const rgbaToHex = rgbArray => {
 };
 
 const fetchFile = fileName => {
-  return fetch("/src/data/" + fileName)
+  return fetch(dataPath + fileName)
     .then(response => {
       if (!response.ok) {
         throw Error;
@@ -76,14 +79,8 @@ document.querySelector(".element32x32").addEventListener("click", () => {
 document.querySelector(".element256x256").addEventListener("click", () => {
   clearCanvas();
   const baseImage = new Image();
-  baseImage.src = "/src/data/image.png";
+  baseImage.src = dataPath + "image.png";
   baseImage.onload = () => {
     ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
   };
 });
-
-window.onload = () => {
-  if (window.location.protocol == "file:") {
-    alert("Please start the HTML server! How to - see in readme.md.");
-  }
-};
