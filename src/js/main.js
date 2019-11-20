@@ -16,7 +16,7 @@ const calculateSquareSize = squareRowCount => {
 const rgbaToHex = rgbArray => {
   const toHex = element => {
     const hex = element.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
+    return hex.length === 1 ? "0" + hex : hex;
   };
 
   return (
@@ -45,22 +45,24 @@ const clearCanvas = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 };
 
-const fillCanvas = (squareInRow, data) => {
-  if (data === "error") return;
+const fillCanvas = (squareInRow, pixelsColor) => {
+  if (pixelsColor === "error") { return; }
   const squareSize = calculateSquareSize(squareInRow);
 
   clearCanvas();
 
   let colorHandler;
-  if (typeof data[0][0] !== "string") {
+  const firstPixelsRow = pixelsColor[0];
+  const firstPixelColor = firstPixelsRow[0];
+  if (typeof firstPixelColor !== "string") {
     colorHandler = rgbaToHex;
   } else {
     colorHandler = elem => elem;
   }
 
-  for (let i = 0; i < data.length; i++) {
-    for (let j = 0; j < data[i].length; j++) {
-      ctx.fillStyle = "#" + colorHandler(data[i][j]);
+  for (let i = 0; i < pixelsColor.length; i++) {
+    for (let j = 0; j < pixelsColor[i].length; j++) {
+      ctx.fillStyle = "#" + colorHandler(pixelsColor[i][j]);
       ctx.fillRect(j * squareSize, i * squareSize, squareSize, squareSize);
     }
   }
