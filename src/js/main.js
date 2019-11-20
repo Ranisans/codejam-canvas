@@ -22,7 +22,7 @@ const rgbaToHex = rgbArray => {
   return (
     toHex(rgbArray[0]) + toHex(rgbArray[1]) + toHex(rgbArray[2])
     //  + toHex(rgbArray[3] || 255)
-    // uncomment if need transpareny
+    // uncomment if need transparently
   );
 };
 
@@ -52,8 +52,12 @@ const fillCanvas = (squareInRow, data) => {
   clearCanvas();
 
   let colorHandler;
-  if (typeof data[0][0] !== "string") colorHandler = rgbaToHex;
-  else colorHandler = elem => elem;
+  if (typeof data[0][0] !== "string") {
+    colorHandler = rgbaToHex;
+  } else {
+    colorHandler = elem => elem;
+  }
+
   for (let i = 0; i < data.length; i++) {
     for (let j = 0; j < data[i].length; j++) {
       ctx.fillStyle = "#" + colorHandler(data[i][j]);
