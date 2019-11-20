@@ -62,25 +62,27 @@ const fillCanvas = (squareInRow, data) => {
   }
 };
 
-document.querySelector(".element4x4").addEventListener("click", () => {
-  const squareInRow = 4;
-  fetchFile("4x4.json").then(data => {
+document.querySelector(".change_data").addEventListener("click", (e) => {
+  const { size } = e.target.dataset;
+  let squareInRow;
+  let fileName;
+  if (size === '4') {
+    squareInRow = 4;
+    fileName = '4x4';
+  } else if (size === '32') {
+    squareInRow = 32;
+    fileName = '32x32';
+  } else if (size === '256') {
+    clearCanvas();
+    const baseImage = new Image();
+    baseImage.src = dataPath + "image.png";
+    baseImage.onload = () => {
+      ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
+    };
+    return;
+  } else { return; }
+
+  fetchFile(`${fileName}.json`).then(data => {
     fillCanvas(squareInRow, data);
   });
-});
-
-document.querySelector(".element32x32").addEventListener("click", () => {
-  const squareInRow = 32;
-  fetchFile("32x32.json").then(data => {
-    fillCanvas(squareInRow, data);
-  });
-});
-
-document.querySelector(".element256x256").addEventListener("click", () => {
-  clearCanvas();
-  const baseImage = new Image();
-  baseImage.src = dataPath + "image.png";
-  baseImage.onload = () => {
-    ctx.drawImage(baseImage, 0, 0, canvas.width, canvas.height);
-  };
 });
