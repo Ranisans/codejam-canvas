@@ -5,8 +5,70 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Codejam Canvas</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="src/css/main.css">
 </head>
 <body>
-  
+  <header class="header">
+    <h1 class="site_title">Codejam Canvas</h1>
+    <button class="header-menu">
+      <i class="fa fa-bars menu-icon"></i>
+    </button>
+    <h2 class="window_title">CodeJam - Palette</h2>
+    <button class="header-addition_menu">
+      <i class="fa fa-ellipsis-v menu-icon"></i>
+    </button>
+  </header>
+
+  <main class="main">
+    <section class="working_panels">
+      <h2 class="site_title">Working Panels</h2>
+      <article class="tools working_panels-panel">
+        <h2 class="site_title">Tools</h2>
+        <button class="tools-item paint_bucket">
+          <span class="button-icon"></span>Paint bucket
+        </button>
+        <button class="tools-item choose_color">
+          <span class="button-icon"></span>Choose color
+        </button>
+        <div class="tools-line"></div>
+        <button class="tools-item move">
+          <span class="button-icon"></span>Move
+        </button>
+        <button class="tools-item transform">
+          <span class="button-icon"></span>Transform
+        </button>
+      </article>
+      <article class="colors working_panels-panel">
+        <h2 class="site_title">Colors</h2>
+        <button class="colors-item current_color">
+          <span class="button-icon"></span>Current color
+        </button>
+        <button class="colors-item prev_color">
+          <span class="button-icon"></span>Prev color
+        </button>
+        <div class="tools-line"></div>
+        <button class="colors-item red_color">
+          <span class="button-icon"></span>red
+        </button>
+        <button class="colors-item blue_color">
+          <span class="button-icon"></span>blue
+        </button>
+      </article>
+
+      <article class="change_data working_panels-panel">
+        <h2 class="change_data-header">Change Element</h2>
+        <button class="change_data-button element4x4" data-size="4" >4x4</button>
+        <button class="change_data-button element32x32" data-size="32" >32x32</button>
+        <button class="change_data-button element256x256" data-size="256" >256x256</button>
+      </article>
+    </section>
+
+    <canvas class="canvas" id="canvas"></canvas>
+  </main>
+
+  <script src="src/js/main.js"></script>
 </body>
 </html>
